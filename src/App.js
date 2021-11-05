@@ -1,11 +1,12 @@
 import { lazy, Suspense } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Container from "./components/Container/Container.js";
 import AppBar from "./components/AppBar/AppBar.js";
 const HomePage = lazy(() => import("./views/HomePage/HomePage.js"));
 const MoviesPage = lazy(() => import("./views/MoviesPage/MoviesPage.js"));
 const MovieDetailsPage = lazy(() =>
-  import("./views/MovieDetPage/MovieDetPage.js")
+  import("./views/MovieDetailsPage/MovieDetailsPage.js")
 );
 
 export default function App() {
