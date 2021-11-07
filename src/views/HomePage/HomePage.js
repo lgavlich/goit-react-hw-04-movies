@@ -1,4 +1,4 @@
-import useRouteMatch from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as API from "../../service/API";
 import PageHeading from "../../components/PageHeading/PageHeading";
@@ -10,7 +10,7 @@ export default function HomePage() {
 
   useEffect(() => {
     API.fetchTrand()
-      .then((results) => setMovies((movies) => [...movies, ...results]))
+      .then(({ results }) => setMovies((movies) => [...movies, ...results]))
       .catch(console.log(Error));
   }, []);
   console.log(movies);
