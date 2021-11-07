@@ -5,7 +5,7 @@ import defaultImg from "../../image/default.jpg";
 import s from "../Casts/Casts.module.css";
 
 export default function Cast() {
-  const { movieId } = useParams;
+  const { movieId } = useParams();
   const [cast, setcast] = useState([]);
   console.log(movieId);
 
