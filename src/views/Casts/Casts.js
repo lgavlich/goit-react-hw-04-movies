@@ -16,7 +16,7 @@ export default function Cast() {
           setcast(cast);
         }
       })
-      .catch(console.log(Error));
+      .catch(console.log("error"));
   }, [movieId]);
   console.log(cast);
 
