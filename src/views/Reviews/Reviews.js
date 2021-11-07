@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import { fetchReview } from "../../service/API";
 import { useParams } from "react-router-dom";
-
+import * as API from "../../service/API";
 export default function Reviews() {
-  const { moviewId } = useParams();
-  const [reviews, setReviews] = useState(null);
+  const { movieId } = useParams();
+  const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetchReview(moviewId)
-      .then((data) => {
-        setReviews(data.results);
+    API.fetchReview(movieId)
+      .then(({ results }) => {
+        if (results) {
+          setReviews(results);
+        }
       })
-      .catch((error) => console.warn(error));
-  }, [moviewId]);
+      .catch(console.log("error"));
+  }, [movieId]);
+
   return (
     <div>
       {reviews && reviews.length > 0 ? (
