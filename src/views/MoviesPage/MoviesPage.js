@@ -29,7 +29,7 @@ export default function MoviesPage() {
         })
         .catch(console.log(Error));
     }
-  });
+  }, [search]);
 
   useEffect(() => {
     if (location.search === "") {
